@@ -1,4 +1,5 @@
-import mongoose from 'mongoose'; //1. mongoose 모듈 가져오기
+//1. mongoose 모듈 가져오기
+const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({ //2. 가져온 mongoose 모듈을 이용해서 Schema를 생성한다. 
     //3. 그리고 이 안에서 필드들을 작성한다.
@@ -33,5 +34,6 @@ const userSchema = mongoose.Schema({ //2. 가져온 mongoose 모듈을 이용해
 });
 
 
-export const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
 
+module.exports = { User };
